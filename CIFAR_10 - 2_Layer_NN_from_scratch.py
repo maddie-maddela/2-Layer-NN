@@ -101,7 +101,7 @@ for epoch in range(num_epochs):
 
     # Print loss every few epochs
     if epoch % 10 == 0:
-        print(f"Epoch {epoch}, Loss: {loss}, Accuracy: {accuracy*100}")
+        print(f"Epoch {epoch}, Loss: {loss}, Accuracy: {accuracy*100}%")
 
 # Prediction
 def predict(X):
@@ -111,4 +111,4 @@ def predict(X):
 # Test accuracy
 y_pred = predict(x_test_normalized)
 accuracy = np.mean(y_pred == y_test.flatten())
-print("Test Accuracy:", accuracy*100)
+print(f"Test Accuracy: {accuracy*100}%")
