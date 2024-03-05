@@ -16,14 +16,6 @@ x_test_normalized = x_test_flat / 255.0
 y_train_onehot = tf.keras.utils.to_categorical(y_train, 10)
 y_test_onehot = tf.keras.utils.to_categorical(y_test, 10)
 
-# Sigmoid activation function
-def sigmoid(x):
-    return 1 / (1 + np.exp(-x))
-
-# Derivative of sigmoid function
-def sigmoid_derivative(x):
-    return x * (1 - x)
-
 # ReLU activation function
 def relu(x):
     return np.maximum(0, x)
@@ -109,7 +101,7 @@ for epoch in range(num_epochs):
 
     # Print loss every few epochs
     if epoch % 10 == 0:
-        print(f"Epoch {epoch}, Loss: {loss}, Accuracy: {accuracy}")
+        print(f"Epoch {epoch}, Loss: {loss}, Accuracy: {accuracy*100}")
 
 # Prediction
 def predict(X):
